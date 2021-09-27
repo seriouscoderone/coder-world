@@ -1,6 +1,51 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "basic-programming": {
+      "root": "libs/basic-programming",
+      "sourceRoot": "libs/basic-programming/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/basic-programming/**/*.js"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/basic-programming"],
+          "options": {
+            "jestConfig": "libs/basic-programming/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "playing-cards": {
+      "root": "libs/playing-cards",
+      "sourceRoot": "libs/playing-cards/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/playing-cards/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/playing-cards"],
+          "options": {
+            "jestConfig": "libs/playing-cards/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   }

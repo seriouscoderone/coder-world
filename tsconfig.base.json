@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@coder-world/basic-programming": ["libs/basic-programming/src/index.js"],
+      "@coder-world/playing-cards": ["libs/playing-cards/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
