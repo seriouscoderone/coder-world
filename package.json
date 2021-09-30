@@ -13,6 +13,8 @@
     "tslib": "^2.0.0"
   },
   "devDependencies": {
+    "@seriouscoderone/cdk-construct": "0.0.5",
+    "@seriouscoderone/nx-aws-cdk": "0.0.5",
     "@nrwl/cli": "12.9.0",
     "@nrwl/eslint-plugin-nx": "12.9.0",
     "@nrwl/jest": "12.9.0",
