@@ -35,6 +35,13 @@
     },
     "war-hosting": {
       "tags": []
+    },
+    "war-web": {
+      "tags": []
+    },
+    "war-web-e2e": {
+      "tags": [],
+      "implicitDependencies": ["war-web"]
     }
   }
 }

@@ -22,9 +22,9 @@ export class Deck {
     ]
     const cardNamesInOrder: Array<CardName> = (acesLow) ? ["Ace", ...standardNameOrder] : [...standardNameOrder, "Ace"]
 
-    const overallCardOrder = cardNamesInOrder.reduce<Array<[CardName, Suit]>>((order, name) => [
+    const overallCardOrder = suitsInOrder.reduce<Array<[CardName, Suit]>>((order, name) => [
       ...order,
-      ...suitsInOrder.map<[CardName, Suit]>(suit => [name, suit])
+      ...cardNamesInOrder.map<[CardName, Suit]>(suit => [suit, name])
     ], [])
 
     const toCard = function ([name, suit]: [CardName, Suit], idx: number): Card {

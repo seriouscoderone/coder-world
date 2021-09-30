@@ -8,6 +8,10 @@ export function shuffleDeck(cards) {
   return shuffledCards;
 }
 
+export function basicProgramming() {
+  return "foo"
+}
+
 export function reOrderDeck(cards) {
   const startingDivider = Math.floor(Math.random() * 20 + 0);
   const endingDivider = Math.floor(Math.random() * 51 + 30);
