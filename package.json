@@ -13,8 +13,7 @@
     "tslib": "^2.0.0"
   },
   "devDependencies": {
-    "@seriouscoderone/cdk-construct": "0.0.5",
-    "@seriouscoderone/nx-aws-cdk": "0.0.5",
+    "@angular-devkit/schematics": "^12.2.7",
     "@nrwl/cli": "12.9.0",
     "@nrwl/eslint-plugin-nx": "12.9.0",
     "@nrwl/jest": "12.9.0",
@@ -22,6 +21,8 @@
     "@nrwl/node": "^12.9.0",
     "@nrwl/tao": "12.9.0",
     "@nrwl/workspace": "12.9.0",
+    "@seriouscoderone/cdk-construct": "0.0.5",
+    "@seriouscoderone/nx-aws-cdk": "0.0.5",
     "@types/jest": "26.0.24",
     "@types/node": "14.14.33",
     "@typescript-eslint/eslint-plugin": "~4.28.3",
