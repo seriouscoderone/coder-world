@@ -1,4 +1,5 @@
 import styles from './index.module.css';
+import Image from 'next/image'; 
 
 export function Index() {
   /*
@@ -8,7 +9,7 @@ export function Index() {
    */
   return (
     <div className={styles.page}>
-      FOO
+      <Image src="/heart.svg" height={200} width={200} />
     </div>
   );
 }
