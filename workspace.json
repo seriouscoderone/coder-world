@@ -45,6 +45,84 @@
         }
       }
     },
+    "scratch-clone": {
+      "root": "apps/scratch-clone",
+      "sourceRoot": "apps/scratch-clone",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/next:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "root": "apps/scratch-clone",
+            "outputPath": "dist/apps/scratch-clone"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "scratch-clone:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "scratch-clone:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "executor": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "scratch-clone:build:production"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/scratch-clone"],
+          "options": {
+            "jestConfig": "apps/scratch-clone/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/scratch-clone/**/*.{ts,tsx,js,jsx}"]
+          }
+        }
+      }
+    },
+    "scratch-clone-e2e": {
+      "root": "apps/scratch-clone-e2e",
+      "sourceRoot": "apps/scratch-clone-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/scratch-clone-e2e/cypress.json",
+            "devServerTarget": "scratch-clone:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "scratch-clone:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/scratch-clone-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
     "war-hosting": {
       "root": "apps/war/hosting",
       "sourceRoot": "apps/war/hosting/src",

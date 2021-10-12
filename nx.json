@@ -33,6 +33,13 @@
     "playing-cards": {
       "tags": []
     },
+    "scratch-clone": {
+      "tags": []
+    },
+    "scratch-clone-e2e": {
+      "tags": [],
+      "implicitDependencies": ["scratch-clone"]
+    },
     "war-hosting": {
       "tags": []
     },
