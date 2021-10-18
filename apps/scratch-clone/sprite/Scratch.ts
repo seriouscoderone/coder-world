@@ -10,8 +10,16 @@ export default class Scratch {
   changeXBy(value) {
     this.x = this.x + value
   }
+  changeyBy(value) {
+    this.y = this.y + value
+  }
   whenGreenFlagClicked() {
-    this.setXTo(100)
-    this.setYTo(50)
+    this.setXTo(-215)
+    this.setYTo(163)
+    // eslint-disable-next-line no-constant-condition
+    while(true) {
+      this.changeXBy(1)
+      this.changeyBy(-1)
+    }
   }
 }
