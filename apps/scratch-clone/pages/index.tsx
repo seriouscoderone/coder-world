@@ -1,44 +1,51 @@
-import styles from './index.module.css';
+import Container from '../components/container'
+import MoreStories from '../components/more-stories'
+import HeroPost from '../components/hero-post'
+import Intro from '../components/intro'
+import Layout from '../components/layout'
+import { getAllPosts } from '../lib/api'
+import Head from 'next/head'
+import { CMS_NAME } from '../lib/constants'
 
-export function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.css file.
-   */
+export default function Index({ allPosts }) {
+  const heroPost = allPosts[0]
+  const morePosts = allPosts.slice(1)
   return (
-    <div className={styles.page}>
-
-      <canvas id="myCanvas" width="300" height="300" style={{ border: "1px solid #000000" }}>
-      </canvas>
-
-      <img src='/apple.png' alt="apple" height={50} />
-
-      <img src='/cat.png' alt="apple" height={50} />
-
-      <button onClick={drawHouse}>DRAW HOUSE</button>
-    </div>
-  );
+    <>
+      <Layout preview={undefined}>
+        <Head>
+          <title>Next.js Blog Example with {CMS_NAME}</title>
+        </Head>
+        <Container>
+          <Intro />
+          {heroPost && (
+            <HeroPost
+              title={heroPost.title}
+              coverImage={heroPost.coverImage}
+              date={heroPost.date}
+              author={heroPost.author}
+              slug={heroPost.slug}
+              excerpt={heroPost.excerpt}
+            />
+          )}
+          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        </Container>
+      </Layout>
+    </>
+  )
 }
 
-function drawHouse() {
-  const canvas = document.getElementById('myCanvas') as HTMLCanvasElement;
-  const ctx = canvas.getContext('2d');
-  ctx.lineWidth = 10;
+export async function getStaticProps() {
+  const allPosts = getAllPosts([
+    'title',
+    'date',
+    'slug',
+    'author',
+    'coverImage',
+    'excerpt',
+  ])
 
-  // Wall
-  ctx.strokeRect(75, 140, 150, 110);
-
-  // Door
-  ctx.fillRect(130, 190, 40, 60);
-
-  // Roof
-  ctx.beginPath();
-  ctx.moveTo(50, 140);
-  ctx.lineTo(150, 60);
-  ctx.lineTo(250, 140);
-  ctx.closePath();
-  ctx.stroke();
+  return {
+    props: { allPosts },
+  }
 }
-
-export default Index;

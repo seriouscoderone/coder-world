@@ -17,7 +17,7 @@ export default class Scratch {
     this.setXTo(-215)
     this.setYTo(163)
     // eslint-disable-next-line no-constant-condition
-    while(true) {
+    while(true) { // Forever Loop
       this.changeXBy(1)
       this.changeyBy(-1)
     }
