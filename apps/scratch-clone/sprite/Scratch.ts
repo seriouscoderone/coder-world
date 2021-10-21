@@ -10,7 +10,7 @@ export default class Scratch {
   changeXBy(value) {
     this.x = this.x + value
   }
-  changeyBy(value) {
+  changeYBy(value) {
     this.y = this.y + value
   }
   whenGreenFlagClicked() {
@@ -19,7 +19,7 @@ export default class Scratch {
     // eslint-disable-next-line no-constant-condition
     while(true) {
       this.changeXBy(1)
-      this.changeyBy(-1)
+      this.changeYBy(-1)
     }
   }
 }

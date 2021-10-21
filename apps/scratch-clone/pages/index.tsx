@@ -12,9 +12,9 @@ export function Index() {
       <canvas id="myCanvas" width="300" height="300" style={{ border: "1px solid #000000" }}>
       </canvas>
 
-      <img src='/apple.png' alt="apple" height={50} />
+      {/* <img src='/apple.png' alt="apple" height={50} />
 
-      <img src='/cat.png' alt="apple" height={50} />
+      <img src='/cat.png' alt="apple" height={50} /> */}
 
       <button onClick={drawHouse}>DRAW HOUSE</button>
     </div>
