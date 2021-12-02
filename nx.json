@@ -33,5 +33,22 @@
     "playing-cards": {
       "tags": []
     }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/web"
+  },
+  "defaultProject": "web-site",
+  "generators": {
+    "@nrwl/web:application": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/web:library": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    }
   }
 }
