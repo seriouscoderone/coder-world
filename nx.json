@@ -51,5 +51,8 @@
       "!{projectRoot}/tsconfig.spec.json",
       "!{projectRoot}/jest.config.[jt]s"
     ]
-  }
+  },
+  "plugins": [
+    "@nxrocks/nx-flutter"
+  ]
 }
