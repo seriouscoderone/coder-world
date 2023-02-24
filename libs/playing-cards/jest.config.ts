@@ -1,4 +1,5 @@
-module.exports = {
+/* eslint-disable */
+export default {
   displayName: 'playing-cards',
   preset: '../../jest.preset.js',
   globals: {
