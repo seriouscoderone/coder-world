@@ -74,10 +74,10 @@
         "cwd": "apps/crypto/avatar"
       }
     },
-    "run": {
+    "start": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "flutter run",
+        "command": "flutter run lib/main.dart",
         "cwd": "apps/crypto/avatar"
       }
     },
