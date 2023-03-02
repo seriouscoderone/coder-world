@@ -1,0 +1,56 @@
+{
+  "name": "trashdash-hosting",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/trashdash/hosting/src",
+  "projectType": "application",
+  "targets": {
+    "synth": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "apps/trashdash/hosting",
+        "commands": [
+          {
+            "command": "if [ \"{args.stack}\" = \"undefined\" ]; then cdk synth; else cdk synth {args.stack}; fi"
+          }
+        ]
+      }
+    },
+    "deploy": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "apps/trashdash/hosting",
+        "commands": [
+          {
+            "command": "if [ \"{args.stack}\" = \"undefined\" ]; then cdk deploy --require-approval=never; else cdk deploy --require-approval=never {args.stack}; fi"
+          }
+        ]
+      }
+    },
+    "destroy": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "apps/trashdash/hosting",
+        "commands": [
+          {
+            "command": "if [ \"{args.stack}\" = \"undefined\" ]; then cdk destroy -f; else cdk destroy -f {args.stack}; fi"
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/trashdash/hosting/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
