@@ -153,15 +153,6 @@ class ListFavoritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
-    var pair = appState.current;
-
-    // IconData icon;
-    // if (appState.favorites.contains(pair)) {
-    //   icon = Icons.favorite;
-    // } else {
-    //   icon = Icons.favorite_border;
-    // }
-
     return Center(
       child: ListView(
         children: [
